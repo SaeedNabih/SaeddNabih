@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import Link from 'next/link';
+
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,13 +39,13 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset form after success
     setTimeout(() => {
       setIsSubmitted(false);
@@ -127,7 +129,7 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your ideas into exceptional digital experiences? I'm here to help you 
+              Ready to transform your ideas into exceptional digital experiences? I'm here to help you
               build innovative web solutions that exceed expectations and drive real results.
             </p>
           </div>
@@ -281,9 +283,9 @@ export default function Contact() {
                         />
                       </div>
 
-                      <Button 
-                        type="submit" 
-                        size="lg" 
+                      <Button
+                        type="submit"
+                        size="lg"
                         className="w-full bg-blue-600 hover:bg-blue-700"
                         disabled={isSubmitting}
                       >
@@ -316,17 +318,13 @@ export default function Contact() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="text-stone-950 text-sm leading-relaxed">
                     Need immediate assistance or have a quick question? Reach out directly through any of these channels.
                   </p>
                   <div className="space-y-3">
-                    <Button variant="outline" className="w-full justify-start border-gray-600 text-gray-300 hover:bg-gray-700">
+                    <Button variant="outline" className="w-full justify-start border-gray-600 text-stone-950 hover:bg-gray-800">
                       <Mail className="mr-2 h-4 w-4" />
-                      saeed.nabih@example.com
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start border-gray-600 text-gray-300 hover:bg-gray-700">
-                      <Phone className="mr-2 h-4 w-4" />
-                      +20 123 456 7890
+                      saidtolan111@gmail.com
                     </Button>
                   </div>
                 </CardContent>
@@ -335,20 +333,18 @@ export default function Contact() {
               {/* Social Links */}
               <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-white">Connect With Me</CardTitle>
-                  <CardDescription className="text-gray-300">
+                  <CardTitle className="text-stone-950">Connect With Me</CardTitle>
+                  <CardDescription className="text-stone-950">
                     Follow my work and connect on social platforms
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start border-gray-600 text-gray-300 hover:bg-gray-700">
-                    <Github className="mr-2 h-4 w-4" />
-                    GitHub
-                  </Button>
-                  <Button variant="outline" className="w-full justify-start border-gray-600 text-gray-300 hover:bg-gray-700">
-                    <Linkedin className="mr-2 h-4 w-4" />
-                    LinkedIn
-                  </Button>
+                  <Link href="https://github.com/SaeedNabih/SaeddNabih" target="_blank">
+                    <Button variant="outline" className="w-full justify-start border-gray-600 text-gray-300 hover:bg-gray-700">
+                      <Github className="mr-2 h-4 w-4" />
+                      GitHub
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
 
@@ -369,7 +365,7 @@ export default function Contact() {
                       </Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-300">Response Time</span>
+                      <span className="text-stone-950">Response Time</span>
                       <span className="text-white">Within 24 hours</span>
                     </div>
                     <div className="flex items-center justify-between">
