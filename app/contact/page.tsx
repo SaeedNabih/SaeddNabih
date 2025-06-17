@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Code2, Mail, MapPin, Phone, Clock, Send, CheckCircle, MessageCircle, Calendar, Github, Linkedin } from 'lucide-react';
+import { Code2, Mail, MapPin, Send, CheckCircle, MessageCircle, Calendar, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,14 +10,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import Link from 'next/link';
 
-
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    subject: '',
     message: '',
     projectType: ''
   });
@@ -36,28 +34,42 @@ export default function Contact() {
     }));
   };
 
+  // --- الدالة المعدلة لإرسال البيانات إلى الـ API ---
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset form after success
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: '',
-        projectType: ''
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setIsSubmitted(true);
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          message: '',
+          projectType: ''
+        });
+      }, 4000);
+
+    } catch (error) {
+      console.error('Submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -109,7 +121,7 @@ export default function Contact() {
               <a href="/contact" className="text-white font-medium">Contact</a>
             </div>
             <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-              Get Started
+              <a href="/contact">Get Started</a>
             </Button>
           </div>
         </div>
@@ -253,21 +265,6 @@ export default function Contact() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="subject" className="text-white">
-                          Subject *
-                        </Label>
-                        <Input
-                          id="subject"
-                          name="subject"
-                          value={formData.subject}
-                          onChange={handleInputChange}
-                          required
-                          className="bg-white/10 border-white/20 text-white placeholder-gray-400"
-                          placeholder="Brief description of your project"
-                        />
-                      </div>
-
-                      <div className="space-y-2">
                         <Label htmlFor="message" className="text-white">
                           Project Details *
                         </Label>
@@ -318,11 +315,11 @@ export default function Contact() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <p className="text-stone-950 text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     Need immediate assistance or have a quick question? Reach out directly through any of these channels.
                   </p>
                   <div className="space-y-3">
-                    <Button variant="outline" className="w-full justify-start border-gray-600 text-stone-950 hover:bg-gray-800">
+                    <Button variant="outline" className="w-full justify-start border-stone-950 text-stone-950 hover:bg-gray-800 hover:text-gray-50">
                       <Mail className="mr-2 h-4 w-4" />
                       saidtolan111@gmail.com
                     </Button>
@@ -333,14 +330,14 @@ export default function Contact() {
               {/* Social Links */}
               <Card className="bg-white/5 border-white/10 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-stone-950">Connect With Me</CardTitle>
-                  <CardDescription className="text-stone-950">
+                  <CardTitle className="text-gray-300">Connect With Me</CardTitle>
+                  <CardDescription className="text-gray-300">
                     Follow my work and connect on social platforms
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <Link href="https://github.com/SaeedNabih/SaeddNabih" target="_blank">
-                    <Button variant="outline" className="w-full justify-start border-gray-600 text-gray-300 hover:bg-gray-700">
+                    <Button variant="outline" className="w-full justify-start border-stone-950 text-stone-950 hover:bg-gray-800 hover:text-gray-50">
                       <Github className="mr-2 h-4 w-4" />
                       GitHub
                     </Button>
@@ -365,7 +362,7 @@ export default function Contact() {
                       </Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-stone-950">Response Time</span>
+                      <span className="text-gray-300">Response Time</span>
                       <span className="text-white">Within 24 hours</span>
                     </div>
                     <div className="flex items-center justify-between">

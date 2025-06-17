@@ -35,7 +35,7 @@ export default function Home() {
     {
       title: "AI-Powered Writing Assistant Web App",
       description: "Revolutionary writing platform built with React and Groq Cloud API, empowering users to create compelling content with AI assistance.",
-      image: "/api/placeholder/400/250",
+      image: "/imgs/1.jpg",
       tags: ["React.js", "Groq API", "TypeScript", "Tailwind CSS"],
       liveUrl: "#",
       codeUrl: "#"
@@ -43,7 +43,7 @@ export default function Home() {
     {
       title: "E-Commerce Platform for Seamless Shopping Experience",
       description: "Full-featured e-commerce solution with advanced filtering, secure payments, and intuitive user interface for optimal conversion rates.",
-      image: "/api/placeholder/400/250",
+      image: "/imgs/2.jpg",
       tags: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
       liveUrl: "#",
       codeUrl: "#"
@@ -51,7 +51,7 @@ export default function Home() {
     {
       title: "Interactive Web Application for Real-Time Data Visualization",
       description: "Dynamic dashboard providing real-time analytics with interactive charts and responsive design for data-driven decision making.",
-      image: "/api/placeholder/400/250",
+      image: "/imgs/3.jpg",
       tags: ["React.js", "D3.js", "WebSocket", "Node.js"],
       liveUrl: "#",
       codeUrl: "#"
@@ -63,19 +63,22 @@ export default function Home() {
       title: "Mastering CSS Grid Layouts",
       description: "Comprehensive guide to creating responsive and dynamic layouts using modern CSS Grid techniques.",
       date: "Dec 15, 2024",
-      readTime: "5 min read"
+      readTime: "5 min read",
+      image: "/imgs/4.jpg"
     },
     {
       title: "JavaScript Best Practices for Developers",
       description: "Essential coding standards and optimization techniques for writing maintainable JavaScript applications.",
       date: "Dec 10, 2024",
-      readTime: "7 min read"
+      readTime: "7 min read",
+      image: "/imgs/5.jpg"
     },
     {
       title: "Optimizing Web Performance Techniques",
       description: "Advanced strategies for improving website speed, Core Web Vitals, and overall user experience.",
       date: "Dec 5, 2024",
-      readTime: "6 min read"
+      readTime: "6 min read",
+      image: "/imgs/6.jpg"
     }
   ];
 
@@ -118,8 +121,8 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-                  As a passionate Frontend Developer specializing in React and Next.js, I create 
-                  exceptional digital experiences through clean, responsive code that brings 
+                  As a passionate Frontend Developer specializing in React and Next.js, I create
+                  exceptional digital experiences through clean, responsive code that brings
                   your vision to life with precision and style.
                 </p>
               </div>
@@ -131,16 +134,16 @@ export default function Home() {
                 <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700">
                   <a href="/about">Learn More</a>
                 </Button>
+                <Button size="lg" variant="outline" className="border-blue-600 text-blue-400 hover:bg-blue-700">
+                  <a href="https://drive.google.com/file/d/1DOJP50HUITBxohLmwMfLqjtTAqGzSK53/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                    Download CV
+                  </a>
+                </Button>
               </div>
             </div>
             <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="aspect-square bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl border border-white/10 backdrop-blur-sm flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-2xl mx-auto flex items-center justify-center">
-                    <Code2 className="h-12 w-12 text-white" />
-                  </div>
-                  <p className="text-gray-300 text-lg">Crafting Digital Excellence</p>
-                </div>
+              <div className="aspect-square bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl border border-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+                <img src="/imgs/1.jpg" alt="Digital Excellence" className="object-cover w-full h-full rounded-3xl" />
               </div>
             </div>
           </div>
@@ -192,8 +195,8 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
-                Driven by innovative problem-solving approach, I leverage a meticulous and systematic 
-                platform that prioritizes user experience through modern, responsive interfaces that exceed 
+                Driven by innovative problem-solving approach, I leverage a meticulous and systematic
+                platform that prioritizes user experience through modern, responsive interfaces that exceed
                 client expectations for lasting business impact and growth results.
               </p>
               <div className="grid grid-cols-2 gap-8">
@@ -217,13 +220,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl border border-white/10 backdrop-blur-sm flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-2xl mx-auto flex items-center justify-center">
-                  <Sparkles className="h-16 w-16 text-blue-400" />
-                </div>
-                <p className="text-gray-300 text-lg">Innovation in Action</p>
-              </div>
+            <div className="aspect-square bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl border border-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+              <img src="/imgs/Innovation in Action.jpg" alt="Innovation in Action" className="object-cover w-full h-full rounded-3xl" />
             </div>
           </div>
         </div>
@@ -243,18 +241,15 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              I specialize in creating, developing, and implementing web applications. Each project showcases my 
+              I specialize in creating, developing, and implementing web applications. Each project showcases my
               commitment to quality and user experience.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group overflow-hidden">
-                <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-                  <div className="text-gray-400 text-center">
-                    <Code2 className="h-12 w-12 mx-auto mb-2" />
-                    <p className="text-sm">Project Preview</p>
-                  </div>
+                <div className="aspect-video flex items-center justify-center">
+                  <img src={project.image} alt={project.title} className="object-cover w-full h-full" />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-white group-hover:text-blue-400 transition-colors">
@@ -271,15 +266,6 @@ export default function Home() {
                         {tag}
                       </Badge>
                     ))}
-                  </div>
-                  <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700 flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button size="sm" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700">
-                      <Github className="h-4 w-4" />
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -300,27 +286,12 @@ export default function Home() {
                 </span>
               </h2>
               <p className="text-xl text-gray-300 leading-relaxed">
-                Ready to bring your ideas to life? Let's connect and discuss how we can create something 
+                Ready to bring your ideas to life? Let's connect and discuss how we can create something
                 extraordinary together. I'm always excited to tackle new challenges and deliver exceptional results.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Contact
-                </Button>
-                <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Schedule Call
-                </Button>
-              </div>
             </div>
-            <div className="aspect-square bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-3xl border border-white/10 backdrop-blur-sm flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-32 h-32 bg-gradient-to-br from-purple-400/20 to-blue-400/20 rounded-2xl mx-auto flex items-center justify-center">
-                  <MessageCircle className="h-16 w-16 text-purple-400" />
-                </div>
-                <p className="text-gray-300 text-lg">Let's Connect</p>
-              </div>
+            <div className="aspect-square bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-3xl border border-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+              <img src="/imgs/4.jpg" alt="Let's Connect" className="object-cover w-full h-full rounded-3xl" />
             </div>
           </div>
         </div>
@@ -343,11 +314,8 @@ export default function Home() {
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
             {blogPosts.map((post, index) => (
               <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group">
-                <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-                  <div className="text-gray-400 text-center">
-                    <Code2 className="h-12 w-12 mx-auto mb-2" />
-                    <p className="text-sm">Article Preview</p>
-                  </div>
+                <div className="aspect-video flex items-center justify-center overflow-hidden">
+                  <img src={post.image} alt={post.title} className="object-cover w-full h-full" />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-white group-hover:text-blue-400 transition-colors">
@@ -366,11 +334,6 @@ export default function Home() {
               </Card>
             ))}
           </div>
-          <div className="text-center">
-            <Button variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700">
-              View All Articles
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -383,19 +346,11 @@ export default function Home() {
               <span className="text-2xl font-bold text-white">Saeed</span>
             </div>
             <div className="flex space-x-8 mb-4 md:mb-0">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Home Page</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Projects</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Our Services</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Blog Post</a>
-            </div>
-            <div className="flex space-x-4">
-              <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:bg-gray-700">
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:bg-gray-700">
-                <Mail className="h-4 w-4" />
-              </Button>
+              <a href="/" className="text-gray-400 hover:text-white transition-colors">Home Page</a>
+              <a href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</a>
+              <a href="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</a>
+              <a href="/services" className="text-gray-400 hover:text-white transition-colors">Our Services</a>
+              <a href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog Post</a>
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center">

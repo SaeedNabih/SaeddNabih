@@ -101,7 +101,7 @@ export default function About() {
               <a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
             </div>
             <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-              Get Started
+              <a href="/contact">Get Started</a>
             </Button>
           </div>
         </div>
@@ -123,24 +123,22 @@ export default function About() {
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  I'm Saeed Nabih, a dedicated Frontend Developer based in Cairo, Egypt, with over 5 years 
-                  of experience crafting exceptional digital experiences. My passion lies in transforming 
+                  I'm Saeed Nabih, a dedicated Frontend Developer based in Cairo, Egypt, with over 5 years
+                  of experience crafting exceptional digital experiences. My passion lies in transforming
                   complex ideas into intuitive, beautiful, and high-performing web applications.
                 </p>
                 <p className="text-lg text-gray-400 leading-relaxed">
-                  Specializing in React.js and Next.js, I combine technical expertise with creative problem-solving 
-                  to deliver solutions that not only meet business objectives but exceed user expectations. 
+                  Specializing in React.js and Next.js, I combine technical expertise with creative problem-solving
+                  to deliver solutions that not only meet business objectives but exceed user expectations.
                   I believe that great frontend development is where art meets science.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download CV
-                </Button>
-                <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700">
-                  <Mail className="mr-2 h-5 w-5" />
-                  Get In Touch
+                  <a href="https://drive.google.com/file/d/1DOJP50HUITBxohLmwMfLqjtTAqGzSK53/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                    <Download className="mr-2 h-5 w-5" />
+                    Download CV
+                  </a>
                 </Button>
               </div>
             </div>
@@ -173,7 +171,7 @@ export default function About() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              My comprehensive skill set spans modern frontend technologies, with deep expertise in 
+              My comprehensive skill set spans modern frontend technologies, with deep expertise in
               React ecosystem and contemporary development practices.
             </p>
           </div>
@@ -210,7 +208,7 @@ export default function About() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              A progressive career path focused on mastering modern frontend development 
+              A progressive career path focused on mastering modern frontend development
               and delivering exceptional user experiences.
             </p>
           </div>
@@ -293,19 +291,9 @@ export default function About() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss how my expertise in modern frontend development can help bring your vision to life 
+              Let's discuss how my expertise in modern frontend development can help bring your vision to life
               and create exceptional digital experiences for your users.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Mail className="mr-2 h-5 w-5" />
-                Start a Project
-              </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700">
-                View My Work
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -323,17 +311,6 @@ export default function About() {
               <a href="/about" className="text-white">About</a>
               <a href="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</a>
               <a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-            </div>
-            <div className="flex space-x-4">
-              <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:bg-gray-700">
-                <Github className="h-4 w-4" />
-              </Button>
-              <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:bg-gray-700">
-                <Mail className="h-4 w-4" />
-              </Button>
-              <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:bg-gray-700">
-                <Linkedin className="h-4 w-4" />
-              </Button>
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center">

@@ -1,3 +1,5 @@
+// app/layout.tsx
+
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -5,6 +7,10 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  // --- ✅ السطر الجديد والمهم هنا ---
+  metadataBase: new URL('https://saeed-nabih.com'),
+  // --- نهاية السطر المضاف ---
+
   title: 'Saeed Nabih - Frontend Developer | React & Next.js Expert',
   description: 'Frontend Developer specializing in React.js and Next.js, creating exceptional digital experiences with modern web technologies. Based in Cairo, Egypt.',
   keywords: 'Frontend Developer, React, Next.js, JavaScript, TypeScript, Web Development, Cairo, Egypt',
@@ -13,13 +19,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://saeed-nabih.com',
+    url: 'https://saeed-nabih.com', // هذا ممتاز، لكن metadataBase يجعله أكثر قوة
     title: 'Saeed Nabih - Frontend Developer',
     description: 'Frontend Developer specializing in React.js and Next.js, creating exceptional digital experiences.',
     siteName: 'Saeed Nabih Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.jpg', // الآن Next.js سيفهم تلقائياً أن هذا يعني: https://saeed-nabih.com/og-image.jpg
         width: 1200,
         height: 630,
         alt: 'Saeed Nabih - Frontend Developer',
@@ -31,7 +37,7 @@ export const metadata: Metadata = {
     title: 'Saeed Nabih - Frontend Developer',
     description: 'Frontend Developer specializing in React.js and Next.js',
     creator: '@saeed_nabih',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.jpg'], // وهذا أيضاً سيصبح رابطاً كاملاً تلقائياً
   },
   robots: {
     index: true,

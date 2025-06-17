@@ -1,5 +1,4 @@
 'use client';
-
 import { useState, useEffect } from 'react';
 import { Code2, ExternalLink, Github, Calendar, Clock, ArrowRight, Filter, Search, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,7 +10,7 @@ export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
-
+  
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -97,38 +96,6 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Filter and Search */}
-      <section className="pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
-            <div className="flex flex-wrap gap-3">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedFilter === category ? "default" : "outline"}
-                  onClick={() => setSelectedFilter(category)}
-                  className={selectedFilter === category 
-                    ? "bg-blue-600 hover:bg-blue-700" 
-                    : "border-gray-600 text-gray-300 hover:bg-gray-700"
-                  }
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-            <div className="relative w-full md:w-80">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-              <Input
-                placeholder="Search projects..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-white/5 border-white/10 text-white placeholder-gray-400"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Grid */}
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,46 +121,10 @@ export default function Projects() {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-4">
-                    <a
-                      href={project.liveUrl}
-                      className="flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.codeUrl}
-                      className="flex items-center text-gray-400 hover:text-gray-300 transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      Source Code
-                    </a>
-                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-16">
-              <div className="text-gray-400 text-lg mb-4">No projects found matching your criteria.</div>
-              <Button 
-                onClick={() => {
-                  setSelectedFilter('All');
-                  setSearchTerm('');
-                }}
-                variant="outline" 
-                className="border-gray-600 text-gray-300 hover:bg-gray-700"
-              >
-                Clear Filters
-              </Button>
-            </div>
-          )}
         </div>
       </section>
 
@@ -211,15 +142,6 @@ export default function Projects() {
               These projects represent just a glimpse of what's possible. Let's collaborate to create 
               something extraordinary that exceeds your expectations and delivers exceptional results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                Start Your Project
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-700">
-                Get In Touch
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -237,11 +159,6 @@ export default function Projects() {
               <a href="/about" className="text-gray-400 hover:text-white transition-colors">About</a>
               <a href="/projects" className="text-white">Projects</a>
               <a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
-            </div>
-            <div className="flex space-x-4">
-              <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:bg-gray-700">
-                <Github className="h-4 w-4" />
-              </Button>
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center">
