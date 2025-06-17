@@ -63,7 +63,7 @@ export default function Contact() {
       icon: <Mail className="h-8 w-8" />,
       title: "Email",
       description: "Get in touch via email",
-      value: "contact@example.com"
+      value: "saidtolan111@gmail.com"
     },
     {
       icon: <MessageCircle className="h-8 w-8" />,
