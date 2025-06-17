@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Code2, Sparkles, Zap, Github, ExternalLink, Mail, MessageCircle, Calendar, Users, Award, TrendingUp, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-// import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/components/ui/badge';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
